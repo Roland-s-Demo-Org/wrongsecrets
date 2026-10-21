@@ -44,11 +44,12 @@ resource "random_string" "suffix" {
 
 
 resource "azurerm_storage_account" "account" {
-  name                     = format("wrongsecrets%s%s", random_string.suffix.result, random_integer.suffix.result)
-  resource_group_name      = azurerm_resource_group.default.name
-  location                 = azurerm_resource_group.default.location
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+  name                            = format("wrongsecrets%s%s", random_string.suffix.result, random_integer.suffix.result)
+  resource_group_name             = azurerm_resource_group.default.name
+  location                        = azurerm_resource_group.default.location
+  account_tier                    = "Standard"
+  account_replication_type        = "LRS"
+  allow_nested_items_to_be_public = false
 }
 
 
