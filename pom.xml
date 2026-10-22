@@ -70,8 +70,20 @@
     <thymeleaf.layout.version>3.3.0</thymeleaf.layout.version>
   </properties>
 
+  <repositories>
+    <repository>
+      <id>aikido-maven</id>
+      <url>https://maven.aikido.io/d31fc8ec94e6da07d30</url>
+    </repository>
+  </repositories>
+
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk18on</artifactId>
+        <version>1.78-aikido.3</version>
+      </dependency>
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
