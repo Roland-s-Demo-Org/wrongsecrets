@@ -50,6 +50,7 @@ resource "azurerm_storage_account" "account" {
   account_tier                    = "Standard"
   account_replication_type        = "LRS"
   allow_nested_items_to_be_public = false
+  public_network_access_enabled   = false
 }
 
 
