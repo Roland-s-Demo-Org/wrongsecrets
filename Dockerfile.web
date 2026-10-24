@@ -34,5 +34,6 @@ ENV default_aws_value_challenge_11=$CHALLENGE_11_VALUE
 COPY .github/scripts/ /var/helpers
 COPY src/test/resources/alibabacreds.kdbx /var/helpers
 COPY src/test/resources/RSAprivatekey.pem /var/helpers
-
+RUN adduser -D -u 1000 appuser && chown -R 1000:1000 /var/helpers && chown -R 1000:1000 /app
+USER 1000
 CMD java -Xms128m -Xmx128m -Xss512k -jar -Dserver.port=$PORT -XX:MaxRAMPercentage=75 -XX:MinRAMPercentage=25 -Dspring.profiles.active=without-vault -Dspringdoc.swagger-ui.enabled=${SPRINGDOC_UI} -Dspringdoc.api-docs.enabled=${SPRINGDOC_DOC} application.jar
