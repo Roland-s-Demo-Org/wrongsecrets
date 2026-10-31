@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Code Climate
-        uses: erzz/codeclimate-standalone@v0.0.5
+        uses: erzz/codeclimate-standalone@5223b5a642387c2770e6321e1d4ddb07e2c9515c # v0.0.5
         with:
           html_report: true
           info_threshold: 50
