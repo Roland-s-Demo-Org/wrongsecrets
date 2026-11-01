@@ -11,7 +11,7 @@ jobs:
     if: github.event_name == 'schedule'
     runs-on: ubuntu-latest
     steps:
-      - uses: boundfoxstudios/action-unassign-contributor-after-days-of-inactivity@main
+      - uses: boundfoxstudios/action-unassign-contributor-after-days-of-inactivity@eb02181edb32aa5eeff8e0979871d31399cf63a0 # main
         with:
           last-activity: 90 # After how many days the issue should get unassigned
           labels: 'stale,help wanted' # Only search for issues containing this labels (comma-separated)
