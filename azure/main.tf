@@ -70,4 +70,11 @@ resource "azurerm_kubernetes_cluster" "cluster" {
   }
 
   role_based_access_control_enabled = true
+
+  local_account_disabled = true
+
+  azure_active_directory_role_based_access_control {
+    azure_rbac_enabled     = true
+    admin_group_object_ids = ["<your-azure-ad-group-object-id>"]
+  }
 }
